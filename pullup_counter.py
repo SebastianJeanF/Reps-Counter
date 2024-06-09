@@ -50,7 +50,7 @@ def angles(lmlist,p1,p2,p3,p4,p5,p6,drawpoints , ):
 while True:
     ret, frame = cap.read()
     if not ret:
-        cap = cv2.VideoCapture('pullups.mov')
+        # cap = cv2.VideoCapture('pullups.mov')
         continue
     frame = cv2.resize(frame, (800,1000))
     pd.findPose(frame, draw = 1)
@@ -60,9 +60,7 @@ while True:
    
     cv2.putText(frame , "pullups done:" + str(pullups) ,(10 , 800) ,cv2.FONT_HERSHEY_COMPLEX  , 2 , (0,150,255) , 2)
     cv2.imshow('frame', frame)    
-    
-    
-
+  
 
     if cv2.waitKey(1) == ord('q'):
         break
